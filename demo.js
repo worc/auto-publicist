@@ -9,7 +9,9 @@ const bam = new Bamboozle(({message}) => {
       '▀▁▂▃▄▅▆▇█▉▊▋▌▍▎', // U+258x
       '▐░▒▓▔▕▖▗▘▙▚▛▜▝▞▟', // U+259x
     ].join(''),
-  exclude: '. '
+  exclude: '. ',
+  frequency: 20
 });
 
-bam.reveal(1000);
+bam.start();
+bam.reveal(750, 750);

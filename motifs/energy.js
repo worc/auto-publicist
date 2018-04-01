@@ -1,0 +1,30 @@
+import GetFromShuffled from '../utils/GetFromShuffled';
+
+export default GetFromShuffled([
+  'edge-of-your-seat',
+  'keenly observed',
+  'lyrical',
+  'profound',
+  'erotic',
+  'inspiring',
+  'razor-sharp',
+  'heartrending',
+  'dreamlike',
+  'darkly comic',
+  'uncompromising',
+  'courageous',
+  'compulsively readable',
+  'unflinching',
+  'fiercely honest',
+  'richly drawn',
+  'unforgettable',
+  'riveting',
+  'high-voltage',
+  'psycho-sexual',
+  'riotously funny',
+  'passionate',
+  'surreal',
+  'dystopian',
+  'hysterical',
+  'meditative'
+]);

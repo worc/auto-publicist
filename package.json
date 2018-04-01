@@ -1,0 +1,21 @@
+{
+  "name": "auto-publicist",
+  "version": "1.0.0",
+  "description": "generate a random elevator pitch for your next novel",
+  "author": "worc",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "devBuild": "webpack -d --config webpack.config.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13"
+  },
+  "dependencies": {
+    "bamboozle": "file:../bamboozle/bamboozle-1.0.0.tgz"
+  }
+}

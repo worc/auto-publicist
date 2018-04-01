@@ -1,0 +1,30 @@
+import GetFromShuffled from '../utils/GetFromShuffled';
+
+export default GetFromShuffled([
+  "man's",
+  "orphan's",
+  "daughter's",
+  "mother's",
+  "adolescent's",
+  "soldier's",
+  "student's",
+  "widow's",
+  "woman's",
+  "professor's",
+  "divorcée's",
+  "adventurer's",
+  "extended family's",
+  "child's",
+  "mistress's",
+  "dictator's",
+  "vampire's",
+  "ghost's",
+  "starship captain's",
+  "doctor's",
+  "writer's",
+  "private investigator's",
+  "couple's",
+  "coven's",
+  "murder detective's",
+  "octogenarian's"
+]);

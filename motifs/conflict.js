@@ -1,0 +1,30 @@
+import GetFromShuffled from '../utils/GetFromShuffled';
+
+export default GetFromShuffled([
+  'fear of spiders',
+  'adoption',
+  'traumatic childhood',
+  "mother's death",
+  'sexless marriage',
+  'Oedipal complex',
+  'feminism',
+  'religious upbringing',
+  'political apathy',
+  'biological clock',
+  'ugly divorce',
+  "writer's block",
+  'toxic friendships',
+  'eating disorder',
+  'own birth',
+  'cancer',
+  '23andMe results',
+  'privilege',
+  'untimely death',
+  'social media addiction',
+  'spiritual evolution',
+  'secret second family',
+  'sexual awakening',
+  'Amazon reviews',
+  "father's murder",
+  'disinheritance'
+]);

@@ -1,0 +1,30 @@
+import GetFromShuffled from '../utils/GetFromShuffled';
+
+export default GetFromShuffled([
+  'thriller',
+  'meditation',
+  'coming of age story',
+  'family drama',
+  'war epic',
+  'epistolary novel',
+  'romance',
+  'tragedy',
+  'story',
+  'tour de force',
+  'comedy',
+  'noir',
+  'instant classic',
+  'fairy tale',
+  'autobiographical novel',
+  'romp',
+  'fictional memoir',
+  'trilogy',
+  'detective novel',
+  'page-turner',
+  'tragicomedy',
+  'murder mystery',
+  'novel in stories',
+  'historical novel',
+  'graphic novel',
+  'saga'
+]);

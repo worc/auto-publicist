@@ -1,0 +1,30 @@
+import GetFromShuffled from '../utils/GetFromShuffled';
+
+export default GetFromShuffled([
+  'adventure',
+  'commitment',
+  'desire',
+  'devotion',
+  'dream',
+  'effort',
+  'strategy',
+  'pains',
+  'failure',
+  'inability',
+  'journey',
+  'mission',
+  'not-so-secret desire',
+  'quest',
+  'endeavor',
+  'secret longing',
+  'struggle',
+  'vacation',
+  'wish',
+  'expedition',
+  'plan',
+  'scheme',
+  'resolve',
+  'project',
+  'promise',
+  'battle'
+]);

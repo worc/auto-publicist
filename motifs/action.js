@@ -1,0 +1,30 @@
+import GetFromShuffled from '../utils/GetFromShuffled';
+
+export default GetFromShuffled([
+  're-awaken',
+  'come to grips with',
+  'grapple with',
+  'understand',
+  'explore',
+  'accept',
+  'overcome',
+  'avenge',
+  'pursue',
+  'defend',
+  'undertake',
+  'discover',
+  'contemplate',
+  'transcend',
+  'withdraw from',
+  'avoid',
+  'betray',
+  'circumvent',
+  'confront',
+  'expose',
+  'give up',
+  'investigate',
+  'navigate',
+  'reconnect with',
+  'embrace',
+  'reconcile to'
+]);

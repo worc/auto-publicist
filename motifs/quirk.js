@@ -1,0 +1,30 @@
+import GetFromShuffled from '../utils/GetFromShuffled';
+
+export default GetFromShuffled([
+  'depressed',
+  'wealthy',
+  'doomed',
+  'exuberant',
+  'agoraphobic',
+  'maladjusted',
+  'misanthropic',
+  'alcoholic',
+  'young',
+  'philosophical',
+  'hopelessly romantic',
+  'hyper-sexual',
+  'precocious',
+  'unlucky',
+  'quixotic',
+  'desperate',
+  'refugee',
+  'dissatisfied',
+  'bored',
+  'morally compromised',
+  'lovesick',
+  'drug-addled',
+  'jilted',
+  'vengeful',
+  'overbearing',
+  'closeted'
+]);

@@ -16,6 +16,6 @@
     "webpack-cli": "^2.0.13"
   },
   "dependencies": {
-    "bamboozle": "file:../bamboozle/bamboozle-1.0.0.tgz"
+    "bamboozle": "^1.0.2"
   }
 }

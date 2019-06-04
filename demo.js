@@ -1,4 +1,4 @@
-import AutoPublicist from 'AutoPublicist';
+import AutoPublicist from './AutoPublicist.js';
 import Bamboozle from 'bamboozle';
 
 const pitch = document.getElementById('pitch');

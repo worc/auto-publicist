@@ -4,18 +4,23 @@
   "description": "generate a random elevator pitch for your next novel",
   "author": "worc",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "devBuild": "webpack -d --config webpack.config.js"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.1",
-    "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13"
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "start": "NODE_ENV=development webpack-dev-server --hot --inline --config webpack.config.js"
   },
   "dependencies": {
-    "bamboozle": "^1.0.2"
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/runtime": "^7.4.5",
+    "babel-loader": "^8.0.5",
+    "bamboozle": "^1.0.2",
+    "ejs": "^2.6.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.30.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1"
   }
 }

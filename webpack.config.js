@@ -1,28 +1,51 @@
-const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const path = require('path')
 
-module.exports = [
-  {
-    name: 'bundle',
-    entry: path.resolve(__dirname, 'demo.js'),
-    target: 'node',
+const NODE_ENV = process.env.NODE_ENV
 
-    output: {
-      // path: path.resolve(__dirname),
-      filename: 'bundle.js'
-    },
+module.exports = {
+  mode: NODE_ENV,
 
-    resolve: {
-      modules: [__dirname, 'motifs', 'node_modules']
-    },
+  devtool: NODE_ENV === 'production' ? 'source-map' : 'eval',
 
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
+  devServer: {
+    contentBase: 'dist/',
+    historyApiFallback: true,
+  },
+
+  entry: {
+    main: path.resolve(__dirname, 'demo.js'),
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
           loader: 'babel-loader',
-          exclude: '/node_modules/'
-        }
-      ]
-    }
-  }
-];
+          options: {
+            presets: [ '@babel/preset-env' ],
+          },
+        },
+      },
+    ]
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.ejs',
+    }),
+    new BundleAnalyzerPlugin({
+      logLevel: 'error',
+      analyzerMode: 'static',
+      reportFilename: path.join(__dirname, `.bundle_analysis.html`),
+      openAnalyzer: false,
+    }),
+  ],
+
+  output: {
+    publicPath: '/',
+  },
+}

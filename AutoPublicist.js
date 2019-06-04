@@ -6,6 +6,9 @@ import plot from './motifs/plot';
 import action from './motifs/action';
 import conflict from './motifs/conflict';
 
-export default () => `
-  This ${energy.next().value} ${genre.next().value} is about a/an ${quirk.next().value} ${protagonist.next().value} ${plot.next().value} to ${action.next().value} their ${conflict.next().value} 
-`;
+export default () => {
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+  const nextQuirk = quirk.next().value
+  const indefinite = vowels.includes(nextQuirk.slice(0, 1)) ? 'an' : 'a'
+  return `This ${energy.next().value} ${genre.next().value} is about ${indefinite} ${nextQuirk} ${protagonist.next().value} ${plot.next().value} to ${action.next().value} their ${conflict.next().value}`
+}

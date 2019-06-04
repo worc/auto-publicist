@@ -5,6 +5,7 @@
   "author": "worc",
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "deploy": "npm run build && node ./scripts/deploy.js",
     "start": "NODE_ENV=development webpack-dev-server --hot --inline --config webpack.config.js"
   },
   "dependencies": {
@@ -14,6 +15,7 @@
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/runtime": "^7.4.5",
+    "aws-sdk": "^2.468.0",
     "babel-loader": "^8.0.5",
     "bamboozle": "^1.0.2",
     "ejs": "^2.6.1",

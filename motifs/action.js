@@ -26,5 +26,5 @@ export default GetFromShuffled([
   'navigate',
   'reconnect with',
   'embrace',
-  'reconcile to'
+  'reconcile with'
 ]);

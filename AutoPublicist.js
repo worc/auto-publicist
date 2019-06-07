@@ -69,7 +69,8 @@ const Reshuffle = styled.button`
   cursor: pointer;
   font-size: 28px;
   font-variant-caps: all-small-caps;
-  letter-spacing: 12px;
-  text-align: center;
   height: 80px;
+  letter-spacing: 12px;
+  outline: none;
+  text-align: center;
 `

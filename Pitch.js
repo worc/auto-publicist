@@ -22,7 +22,7 @@ const Reveal = ({reveal}) => {
       })
 
       confuser.start()
-      confuser.reveal(1500)
+      confuser.reveal(1100)
 
       return () => {
         confuser.stop()
@@ -30,7 +30,7 @@ const Reveal = ({reveal}) => {
 
     }, [reveal])
 
-    return <span>{ currentReveal }</span>
+    return <Capitalize>{ currentReveal }</Capitalize>
 }
 
 export default ({ pitch }) => {
@@ -67,6 +67,8 @@ const Pitch = styled.div`
   }
 `
 
-const Capitalize = styled.span`
-  text-transform: capitalize;
+const Capitalize = styled.div`
+  &::first-letter {
+    text-transform: uppercase;
+  }
 `

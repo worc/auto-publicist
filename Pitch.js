@@ -1,5 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import Bamboozle from 'bamboozle'
+
+const Reveal = ({reveal}) => {
+    const [currentReveal, setCurrentReveal] = useState()
+
+    useEffect(() => {
+      const confuser = new Bamboozle(status => {
+        // debugger
+        setCurrentReveal(status.message)
+      }, reveal, {
+        // todo let Confuse handle arrays of characters
+        // todo fix Confuse memory leak?
+        // use bamboozle npm package directly
+        characters: [
+          '▀▁▂▃▄▅▆▇█▉▊▋▌▍▎', // U+258x
+          '▐░▒▓▔▕▖▗▘▙▚▛▜▝▞▟', // U+259x
+        ].join(''),
+        exclude: '. ',
+        speed: 50,
+      })
+
+      confuser.start()
+      confuser.reveal(1500)
+
+      return () => {
+        confuser.stop()
+      }
+
+    }, [reveal])
+
+    return <span>{ currentReveal }</span>
+}
 
 export default ({ pitch }) => {
   const vowels = ['a', 'e', 'i', 'o', 'u']
@@ -9,13 +41,14 @@ export default ({ pitch }) => {
 
   const fiftyFifty = Math.random() > 0.5
 
+  const pitchString = fiftyFifty
+    ? `${energyArticle} ${pitch.energy} ${pitch.genre} ${ energyArticle === 'this' ? 'is' : '' } about ${quirkArticle} ${pitch.quirk} ${pitch.protagonist}'s ${pitch.plot} to ${pitch.action} their ${pitch.conflict}`
+    : `${quirkArticle} ${pitch.quirk} ${pitch.protagonist}'s ${pitch.energy} ${pitch.plot} to ${pitch.action} their ${pitch.conflict}, ${withIndefinite(pitch.genre)}`
+
   return (
     <Pitch>
       <div>
-        { fiftyFifty
-          ? <React.Fragment><Capitalize>{energyArticle}</Capitalize> {pitch.energy} {pitch.genre} { energyArticle === 'this' ? 'is' : null } about {quirkArticle} {pitch.quirk} {pitch.protagonist}'s {pitch.plot} to {pitch.action} their {pitch.conflict}</React.Fragment>
-          : <React.Fragment><Capitalize>{quirkArticle}</Capitalize> {pitch.quirk} {pitch.protagonist}'s {pitch.energy} {pitch.plot} to {pitch.action} their {pitch.conflict}, {withIndefinite(pitch.genre)}</React.Fragment>
-        }
+        <Reveal reveal={ pitchString }/>
       </div>
     </Pitch>
   )

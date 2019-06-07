@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 const NODE_ENV = process.env.NODE_ENV
@@ -30,6 +31,25 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.(ttf|eot|otf|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            publicPath: 'fonts',
+          }
+        },
+      },
+      {
+        test: /\.css$/,
+        use:[{
+          loader: MiniCssExtractPlugin.loader,
+        },
+          'css-loader',
+        ]
+
+      },
     ]
   },
 
@@ -42,6 +62,12 @@ module.exports = {
       analyzerMode: 'static',
       reportFilename: path.join(__dirname, `.bundle_analysis.html`),
       openAnalyzer: false,
+    }),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
   ],
 

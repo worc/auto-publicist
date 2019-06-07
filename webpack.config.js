@@ -15,7 +15,7 @@ module.exports = {
   },
 
   entry: {
-    main: path.resolve(__dirname, 'demo.js'),
+    main: path.resolve(__dirname, 'index.js'),
   },
 
   module: {

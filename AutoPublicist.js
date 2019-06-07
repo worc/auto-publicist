@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect } from 'react'
 import styled from 'styled-components'
 import energy from './motifs/energy';
-import genre from './motifs/genre';
+import form from './motifs/form';
 import quirk from './motifs/quirk';
 import protagonist from './motifs/protagonist';
 import plot from './motifs/plot';
@@ -26,7 +26,7 @@ function reducer (state, message) {
     case SHUFFLE_ALL:
       return {
         energy: energy.next().value,
-        genre: genre.next().value,
+        form: form.next().value,
         quirk: quirk.next().value,
         protagonist: protagonist.next().value,
         plot: plot.next().value,

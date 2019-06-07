@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Bamboozle from 'bamboozle'
+import form from './motifs/form'
 
 const Reveal = ({reveal}) => {
     const [currentReveal, setCurrentReveal] = useState()
@@ -42,8 +43,8 @@ export default ({ pitch }) => {
   const fiftyFifty = Math.random() > 0.5
 
   const pitchString = fiftyFifty
-    ? `${energyArticle} ${pitch.energy} ${pitch.genre} ${ energyArticle === 'this' ? 'is' : '' } about ${quirkArticle} ${pitch.quirk} ${pitch.protagonist}'s ${pitch.plot} to ${pitch.action} their ${pitch.conflict}`
-    : `${quirkArticle} ${pitch.quirk} ${pitch.protagonist}'s ${pitch.energy} ${pitch.plot} to ${pitch.action} their ${pitch.conflict}, ${withIndefinite(pitch.genre)}`
+    ? `${energyArticle} ${pitch.energy} ${pitch.form} ${ energyArticle === 'this' ? 'is' : '' } about ${quirkArticle} ${pitch.quirk} ${pitch.protagonist}'s ${pitch.plot} to ${pitch.action} their ${pitch.conflict}`
+    : `${quirkArticle} ${pitch.quirk} ${pitch.protagonist}'s ${pitch.energy} ${pitch.plot} to ${pitch.action} their ${pitch.conflict}, ${withIndefinite(pitch.form)}`
 
   return (
     <Pitch>

@@ -2,6 +2,8 @@ import React from 'react'
 import { render } from 'react-dom'
 import { createGlobalStyle } from 'styled-components'
 import AutoPublicist from './AutoPublicist'
+import './fonts/DejaVuSansMono.css'
+import './fonts/DejaVuSansMono.woff'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -9,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: "Menlo", "DejaVu Sans Mono", monospace;
+    font-family: "DejaVu Sans Mono", "Roboto Mono", monospace;
   }
   
   html, body, #pitch {

@@ -13,7 +13,7 @@ const SHUFFLE_ALL = 'shuffle all'
 
 const initialState = {
   energy: '',
-  genre: '',
+  form: '',
   quirk: '',
   protagonist: '',
   plot: '',

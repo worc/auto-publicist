@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Bamboozle from 'bamboozle'
-import form from './motifs/form'
+import { gender } from './motifs/protagonist'
 
 const Reveal = ({reveal}) => {
     const [currentReveal, setCurrentReveal] = useState()
@@ -39,12 +39,29 @@ export default ({ pitch }) => {
   const withIndefinite = phrase => vowels.includes(phrase.slice(0, 1)) ? `an ${phrase}` : `a ${phrase}`
   const energyArticle = Math.random() > 0.5 ? vowels.includes(pitch.energy.slice(0, 1)) ? 'an' : 'a' : 'this'
   const quirkArticle = vowels.includes(pitch.quirk.slice(0, 1)) ? 'an' : 'a'
+  const possessiveProunouns = {
+    [gender.feminine]: 'her',
+    [gender.masculine]: 'his',
+    [gender.neutral]: 'their',
+  }
 
-  const fiftyFifty = Math.random() > 0.5
+  const pronoun = possessiveProunouns[pitch.protagonist.gender]
 
-  const pitchString = fiftyFifty
-    ? `${energyArticle} ${pitch.energy} ${pitch.form} ${ energyArticle === 'this' ? 'is' : '' } about ${quirkArticle} ${pitch.quirk} ${pitch.protagonist}'s ${pitch.plot} to ${pitch.action} their ${pitch.conflict}`
-    : `${quirkArticle} ${pitch.quirk} ${pitch.protagonist}'s ${pitch.energy} ${pitch.plot} to ${pitch.action} their ${pitch.conflict}, ${withIndefinite(pitch.form)}`
+
+  let pitchString = ''
+  const random = Math.random()
+
+  switch (true) {
+    case random > 0.66:
+      pitchString = `${energyArticle} ${pitch.energy} ${pitch.form} ${ energyArticle === 'this' ? 'is' : '' } about ${quirkArticle} ${pitch.quirk} ${pitch.protagonist.character}'s ${pitch.plot} to ${pitch.action} ${pronoun} ${pitch.conflict}`
+      break
+    case random > 0.33:
+      pitchString = `In this ${pitch.form}, ${withIndefinite(pitch.protagonist.character)} must ${pitch.plot} to ${pitch.action} ${pronoun} ${pitch.conflict}`
+      break
+    default:
+      pitchString = `${quirkArticle} ${pitch.quirk} ${pitch.protagonist.character}'s ${pitch.energy} ${pitch.plot} to ${pitch.action} ${pronoun} ${pitch.conflict}, ${withIndefinite(pitch.form)}`
+      break
+  }
 
   return (
     <Pitch>

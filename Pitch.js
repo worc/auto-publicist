@@ -48,11 +48,20 @@ export default ({ pitch }) => {
   const pronoun = possessiveProunouns[pitch.protagonist.gender]
 
 
-  const fiftyFifty = Math.random() > 0.5
+  let pitchString = ''
+  const random = Math.random()
 
-  const pitchString = fiftyFifty
-    ? `${energyArticle} ${pitch.energy} ${pitch.form} ${ energyArticle === 'this' ? 'is' : '' } about ${quirkArticle} ${pitch.quirk} ${pitch.protagonist.character}'s ${pitch.plot} to ${pitch.action} ${pronoun} ${pitch.conflict}`
-    : `${quirkArticle} ${pitch.quirk} ${pitch.protagonist.character}'s ${pitch.energy} ${pitch.plot} to ${pitch.action} ${pronoun} ${pitch.conflict}, ${withIndefinite(pitch.form)}`
+  switch (true) {
+    case random > 0.66:
+      pitchString = `${energyArticle} ${pitch.energy} ${pitch.form} ${ energyArticle === 'this' ? 'is' : '' } about ${quirkArticle} ${pitch.quirk} ${pitch.protagonist.character}'s ${pitch.plot} to ${pitch.action} ${pronoun} ${pitch.conflict}`
+      break
+    case random > 0.33:
+      pitchString = `In this ${pitch.form}, ${withIndefinite(pitch.protagonist.character)} must ${pitch.plot} to ${pitch.action} ${pronoun} ${pitch.conflict}`
+      break
+    default:
+      pitchString = `${quirkArticle} ${pitch.quirk} ${pitch.protagonist.character}'s ${pitch.energy} ${pitch.plot} to ${pitch.action} ${pronoun} ${pitch.conflict}, ${withIndefinite(pitch.form)}`
+      break
+  }
 
   return (
     <Pitch>

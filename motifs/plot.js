@@ -7,6 +7,7 @@ export default GetFromShuffled([
   `desire`,
   `devotion`,
   `dream`,
+  `duty`,
   `effort`,
   `endeavor`,
   `expedition`,

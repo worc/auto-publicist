@@ -15,7 +15,10 @@ const initialState = {
   energy: '',
   form: '',
   quirk: '',
-  protagonist: '',
+  protagonist: {
+    character: '',
+    gender: '',
+  },
   plot: '',
   action: '',
   conflict: '',

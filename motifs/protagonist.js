@@ -56,12 +56,24 @@ export default GetFromShuffled([
     gender: gender.neutral,
   },
   {
+  character: `gigolo`,
+  gender: gender.masculine,
+  },
+  {
     character: `ghost`,
     gender: gender.neutral,
   },
   {
+    character: `godmother`,
+    gender: gender.feminine,
+  },
+  {
     character: `house sitter`,
     gender: gender.neutral
+  },
+  {
+    character: `high-school soccer coach`,
+    gender: gender.neutral,
   },
   {
     character: `international super spy`,
@@ -138,6 +150,10 @@ export default GetFromShuffled([
   {
     character: `talent director`,
     gender: gender.neutral,
+  },
+  {
+    character: `traveling salesman`,
+    gender: gender.masculine,
   },
   {
     character: `vampire`,

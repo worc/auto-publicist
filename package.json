@@ -16,7 +16,7 @@
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.4.5",
-    "aws-sdk": "^2.468.0",
+    "aws-sdk": "^2.814.0",
     "babel-loader": "^8.0.5",
     "bamboozle": "^1.0.5",
     "css-loader": "^2.1.1",

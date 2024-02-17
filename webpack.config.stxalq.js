@@ -1,7 +1,7 @@
-const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
 const path = require('path')
 
 const NODE_ENV = process.env.NODE_ENV
@@ -18,9 +18,10 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, '.stxalq/static'),
-    filename: '[name].[contenthash].js',
-    publicPath: '',
+    clean: true,
+    path: path.resolve(__dirname, '.stxalq'),
+    filename: 'static/[name].[contenthash].js',
+    publicPath: '/',
   },
 
   module: {
@@ -40,7 +41,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name].[ext]',
+            name: 'fonts/[name].[ext]',
             publicPath: 'fonts',
           }
         },
@@ -58,7 +59,9 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(),
+    new WebpackManifestPlugin({
+      fileName: path.join(__dirname, '.stxalq/manifest/auto-publicist.json'),
+    }),
     new BundleAnalyzerPlugin({
       logLevel: 'error',
       analyzerMode: 'static',
@@ -68,12 +71,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: 'static/[name].css',
+      chunkFilename: 'static/[id].css',
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'views', to: '../views' },
+        { from: 'views', to: 'views' },
       ]
     })
   ],
